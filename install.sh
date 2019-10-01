@@ -39,3 +39,8 @@ do
 	ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
 
+cd bin
+for f in *
+do
+	ln -snfv "$DOTPATH/bin/$f" "$HOME/bin/$f"
+done
