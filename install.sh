@@ -38,3 +38,9 @@ do
 
 	ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
+
+cd lib
+for f in *
+do
+	ln -snfv "$DOTPATH/lib/$f" "$HOME/$f"
+done
