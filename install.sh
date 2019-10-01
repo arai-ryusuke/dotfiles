@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GITHUB_URL=git@github.com:arai-ryusuke/dotfiles
+GITHUB_URL=https://github.com/arai-ryusuke/dotfiles
 DOTPATH=~/.dotfiles
 
 # git が使えるなら git
