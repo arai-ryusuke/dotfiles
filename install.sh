@@ -1,13 +1,14 @@
 #!/bin/sh
 
-DOTPATH=~/dotfiles
+GITHUB_URL=git@github.com:arai-ryusuke/dotfiles
+DOTPATH=~/.dotfiles
 
 # git が使えるなら git
 if type "git" > /dev/null 2>&1; then
-	git clone --recursive "$GITHUB_URL" "$DOTPATH"
+	git clone --recursive "$GITHUB_URL" "$DOTPATH" 
 
 elif type "curl" > /dev/null 2>&1|| type "wget" > /dev/null 2>&1; then
-	tarball="https://github.com/b4b4r07/dotfiles/archive/master.tar.gz"
+	tarball="https://github.com/arai-ryusuke/dotfiles/archive/master.tar.gz"
 
 	if type "curl" > /dev/null 2>&1; then
 		curl -L "$tarball"
@@ -24,7 +25,7 @@ elif type "curl" > /dev/null 2>&1|| type "wget" > /dev/null 2>&1; then
 		exit 1
 fi
 
-cd ~/dotfiles
+cd ~/.dotfiles
 if [ $? -ne 0 ]; then
 	echo "not found: $DOTPATH"
 	exit 1
