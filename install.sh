@@ -3,7 +3,6 @@
 GITHUB_URL=https://github.com/arai-ryusuke/dotfiles
 DOTPATH=~/.dotfiles
 
-# git が使えるなら git
 if type "git" > /dev/null 2>&1; then
 	git clone --recursive "$GITHUB_URL" "$DOTPATH" 
 
@@ -31,7 +30,6 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-# 移動できたらリンクを実行する
 for f in .??*
 do
 	[ "$f" = ".git" ] && continue
