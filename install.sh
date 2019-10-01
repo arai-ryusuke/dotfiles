@@ -39,6 +39,10 @@ do
 	ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
 
+if [ ! -d bin ]; then
+	mkdir bin
+fi
+
 cd bin
 for f in *
 do
