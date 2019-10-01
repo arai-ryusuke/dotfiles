@@ -39,11 +39,11 @@ do
 	ln -snfv "$DOTPATH/$f" "$HOME/$f"
 done
 
-if [ ! -d bin ]; then
-	mkdir bin
+if [ ! -d ~/bin ]; then
+	mkdir ~/bin
 fi
 
-cd bin
+cd ~/bin
 for f in *
 do
 	ln -snfv "$DOTPATH/bin/$f" "$HOME/bin/$f"
