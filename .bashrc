@@ -10,7 +10,7 @@ fi
 
 # User specific aliases and functions
 source ~/bin/git-prompt.sh
-export PS1='\[\e[1;34m\][\u@\h \W]\[\e[m\]\[\e[1;32m $(__git_ps1 "(%s)")\[\e[0m\] \$ '
+export PS1='\[\e[1;31m\][\u@\h \W]\[\e[m\]\[\e[1;32m $(__git_ps1 "(%s)")\[\e[0m\] \$ '
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
