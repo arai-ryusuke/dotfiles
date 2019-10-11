@@ -18,3 +18,4 @@ repo = 'kannokanno/previm'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+
