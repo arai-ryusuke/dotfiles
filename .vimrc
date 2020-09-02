@@ -42,7 +42,6 @@ endif
 colorscheme molokai
 set t_Co=256
 
-
 autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
 "Need: kannokanno/previm
@@ -72,6 +71,7 @@ set hlsearch
 set wildmenu
 set wildmode=list:longest
 set ruler
+set scrolloff=5
 
 set virtualedit=block
 set shiftwidth=2
@@ -111,10 +111,8 @@ nnoremap sQ :<C-u>bd<CR>
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-nnoremap <S-j> Vj
-nnoremap <S-k> Vk
-vnoremap <S-j> j
-vnoremap <S-k> k
+nnoremap <S-j> :ALENextWrap<CR>
+nnoremap <S-k> :ALEPreviousWrap<CR>
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
 nnoremap <C-l> 5l
@@ -123,3 +121,8 @@ vnoremap <C-j> 5j
 vnoremap <C-k> 5k
 vnoremap <C-l> 5l
 vnoremap <C-h> 5h
+
+let g:ale_ruby_rubocop_options = '--except Style/BlockDelimiters'
+let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_fixers = { 'ruby': ['rubocop'], }
+let g:ale_fix_on_save = 1
