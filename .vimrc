@@ -91,6 +91,8 @@ nnoremap <silent> <F5> :e!<CR>
 
 inoremap <silent> jj <ESC>
 tnoremap <silent> <C-\> <C-w><S-n>
+tnoremap <silent> <C-l> <C-w>l
+tnoremap <silent> <C-h> <C-w>h
 
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -117,12 +119,12 @@ nnoremap <S-j> :ALENextWrap<CR>
 nnoremap <S-k> :ALEPreviousWrap<CR>
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
-nnoremap <C-l> 5l
-nnoremap <C-h> 5h
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 vnoremap <C-j> 5j
 vnoremap <C-k> 5k
-vnoremap <C-l> 5l
-vnoremap <C-h> 5h
+vnoremap <C-l> <C-w>l
+vnoremap <C-h> <C-w>h
 
 let g:ale_ruby_rubocop_options = '--except Style/BlockDelimiters'
 let g:ale_ruby_rubocop_executable = 'bundle'
