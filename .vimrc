@@ -90,6 +90,7 @@ nnoremap <silent> <F10> ggVG
 nnoremap <silent> <F5> :e!<CR>
 
 inoremap <silent> jj <ESC>
+tnoremap <silent> <C-\> <C-w><S-n>
 
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -110,13 +111,14 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-n> :vert term<CR>
 
 nnoremap <S-j> :ALENextWrap<CR>
 nnoremap <S-k> :ALEPreviousWrap<CR>
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
 nnoremap <C-l> 5l
-nnoremap <C-h> 5
+nnoremap <C-h> 5h
 vnoremap <C-j> 5j
 vnoremap <C-k> 5k
 vnoremap <C-l> 5l
