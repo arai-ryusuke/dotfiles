@@ -81,6 +81,8 @@ set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,],~
 set backspace=indent,eol,start
 
+set termwinkey=<C-L>
+
 nmap <silent><Esc><Esc> :nohlsearch<CR><Esc>
 
 nnoremap Y y$
@@ -90,9 +92,10 @@ nnoremap <silent> <F10> ggVG
 nnoremap <silent> <F5> :e!<CR>
 
 inoremap <silent> jj <ESC>
-tnoremap <silent> <C-\> <C-w><S-n>
-tnoremap <silent> <C-l> <C-w>l
-tnoremap <silent> <C-h> <C-w>h
+tnoremap <silent> <C-p> <C-L>""
+tnoremap <silent> <C-\> <C-L><S-n>
+tnoremap <silent> <C-l> <C-L>l
+tnoremap <silent> <C-h> <C-L>h
 
 nnoremap s <Nop>
 nnoremap sj <C-w>j
