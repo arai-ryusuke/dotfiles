@@ -1,0 +1,12 @@
+[user]
+	name = arai-ryusuke
+	email = Ryusuke.Arai@jp.ricoh.com
+[core]
+	editor = vim
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	cm = commit
+	df = diff
+	gr = grep

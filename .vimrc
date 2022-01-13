@@ -74,6 +74,7 @@ set ruler
 set scrolloff=5
 
 set virtualedit=block
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
@@ -129,7 +130,7 @@ vnoremap <C-k> 5k
 vnoremap <C-l> <C-w>l
 vnoremap <C-h> <C-w>h
 
-let g:ale_ruby_rubocop_options = '--except Style/BlockDelimiters'
+let g:ale_ruby_rubocop_options = '--ignore-parent-exclusion --except Style/BlockDelimiters'
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_fixers = { 'ruby': ['rubocop'], }
 let g:ale_fix_on_save = 1
