@@ -2,7 +2,7 @@
 	name = arai-ryusuke
 	email = Ryusuke.Arai@jp.ricoh.com
 [core]
-	editor = vim
+	editor = vim -c \"set fenc=utf-8\"
 [alias]
 	st = status
 	co = checkout
