@@ -18,5 +18,3 @@ if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi
 source "$HOME/.cargo/env"
-
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
