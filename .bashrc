@@ -16,6 +16,8 @@ if [ -z "$SSH_CONNECTION" ]; then
 else
   export PS1='\[\e[1;31m\][\u\[\e[1;32m\]@remote \[\e[1;31m\]\W]\[\e[1;32m\] $(__git_ps1 "(%s)")\[\e[m\] \$ '
 fi
+alias tmuxe="tmux new -A -s editor"
+alias tmuxc="tmux new -A -s command"
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
