@@ -10,7 +10,12 @@ fi
 
 # User specific aliases and functions
 source ~/bin/git-prompt.sh
-export PS1='\[\e[1;31m\][\u@\h \W]\[\e[1;32m\] $(__git_ps1 "(%s)")\[\e[m\] \$ '
+SSH_CONNECTION=`env | grep SSH_CONNECTION`
+if [ -z "$SSH_CONNECTION" ]; then
+  export PS1='\[\e[1;31m\][\u@\h \W]\[\e[1;32m\] $(__git_ps1 "(%s)")\[\e[m\] \$ '
+else
+  export PS1='\[\e[1;31m\][\u\[\e[1;32m\]@remote \[\e[1;31m\]\W]\[\e[1;32m\] $(__git_ps1 "(%s)")\[\e[m\] \$ '
+fi
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
