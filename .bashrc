@@ -21,4 +21,6 @@ alias tmuxc="tmux new -A -s command"
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
+alias g='git'
+alias grep='grep --color'
 set -o vi
