@@ -26,3 +26,6 @@ alias g='git'
 __git_complete g __git_main
 alias grep='grep --color'
 set -o vi
+
+eval `ssh-agent` > /dev/null
+ssh-add ~/.ssh/gitlab_rsa
