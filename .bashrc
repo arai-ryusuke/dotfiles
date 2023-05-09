@@ -24,7 +24,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias g='git'
 __git_complete g __git_main
-alias grep='grep --color'
+alias grep='grep --color=always'
 set -o vi
 
 eval `ssh-agent` > /dev/null
