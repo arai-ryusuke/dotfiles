@@ -26,6 +26,7 @@ alias g='git'
 __git_complete g __git_main
 alias grep='grep --color=always'
 set -o vi
+alias clip='/mnt/c/WINDOWS/system32/clip.exe'
 
 # remove this lines if remote
 eval `ssh-agent` > /dev/null
