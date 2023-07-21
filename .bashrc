@@ -24,7 +24,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias g='git'
 __git_complete g __git_main
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
 set -o vi
 alias clip='/mnt/c/WINDOWS/system32/clip.exe'
 
