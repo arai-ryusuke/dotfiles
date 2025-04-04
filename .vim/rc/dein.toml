@@ -27,3 +27,6 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'github/copilot.vim'

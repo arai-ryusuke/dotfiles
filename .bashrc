@@ -31,3 +31,5 @@ alias clip='/mnt/c/WINDOWS/system32/clip.exe'
 # remove this lines if remote
 eval `ssh-agent` > /dev/null
 ssh-add ~/.ssh/gitlab_rsa
+ssh-add ~/.ssh/github_rsa
+ssh-add ~/.ssh/id_rsa_arai-ryusuke
