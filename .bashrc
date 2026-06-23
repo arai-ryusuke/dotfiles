@@ -29,7 +29,12 @@ set -o vi
 alias clip='/mnt/c/WINDOWS/system32/clip.exe'
 
 # remove this lines if remote
-eval `ssh-agent` > /dev/null
-ssh-add ~/.ssh/gitlab_rsa
-ssh-add ~/.ssh/github_rsa
-ssh-add ~/.ssh/id_rsa_arai-ryusuke
+# --- ssh-agent: 単一エージェントを使い回す（OS再起動まで再入力不要） ---
+# 鍵は config の "AddKeysToAgent yes" により初回利用時に自動登録される。
+SSH_ENV="$HOME/.ssh/agent-env"
+[ -f "$SSH_ENV" ] && . "$SSH_ENV" >/dev/null
+ssh-add -l >/dev/null 2>&1
+if [ $? -eq 2 ]; then            # 2 = 到達可能なエージェントが無い
+    (umask 077; ssh-agent -s > "$SSH_ENV")
+    . "$SSH_ENV" >/dev/null
+fi
