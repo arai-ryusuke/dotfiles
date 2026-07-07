@@ -66,6 +66,11 @@ set hidden
 set showcmd
 set number
 set cursorline
+
+" ヤンクをWindowsクリップボードへ同期（+clipboardビルド時のみ有効。WSLg経由でUTF-8安全）
+if has('clipboard')
+  set clipboard=unnamedplus
+endif
 set virtualedit=onemore
 set smartindent
 set showmatch
@@ -98,6 +103,18 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 nnoremap <silent> <F10> ggVG
 nnoremap <silent> <F5> :e!<CR>
+
+" <F2>: 行番号・サイン列の表示を切替（マウスでドラッグコピーする時はOFFにすると桁がきれいに取れる）
+function! ToggleGutter() abort
+  if &number
+    setlocal nonumber norelativenumber signcolumn=no
+    echo '[gutter OFF] マウスでコピーしやすい状態'
+  else
+    setlocal number signcolumn=auto
+    echo '[gutter ON]'
+  endif
+endfunction
+nnoremap <silent> <F2> :call ToggleGutter()<CR>
 
 inoremap <silent> jj <ESC>
 tnoremap <silent> <C-p> <C-L>""

@@ -1,0 +1,60 @@
+# 手動インストールしてきたAPTパッケージ一覧（scripts/apt-install.sh が読む）
+# 由来: 旧端末の /var/log/apt/history.log*（2020-04〜2026-07）の棚卸し
+# gh / msodbcsql18 / azure-cli / docker-* は事前に scripts/apt-repos.sh でリポジトリ登録が必要
+
+# --- CLIツール ---
+gh                    # GitHub CLI（github-cliリポジトリ）
+jq
+tree
+ripgrep
+gdb
+pwgen
+makepasswd
+whois
+unzip
+chrony                # WSL2の時刻ずれ対策
+
+# --- 音声（WSL2で通知音を鳴らすため。~/.asoundrc とセット） ---
+mpg123                # herdr通知音の再生用（mp3デコーダ）
+libasound2-plugins    # ALSA→PulseAudio(WSLg)ルーティング用プラグイン
+sox
+libsox-fmt-pulse
+
+# --- GUIライブラリ（ヘッドレスブラウザ等の依存） ---
+libatk1.0-0           # 24.04ではlibatk1.0-0t64が自動選択される
+libatk-bridge2.0-0
+
+# --- ODBC / SQL Server（mssql-releaseリポジトリ） ---
+unixodbc
+odbcinst
+msodbcsql18           # 要 ACCEPT_EULA=Y（apt-install.shが付与する）
+
+# --- Azure ---
+azure-cli             # azure-cliリポジトリ（旧端末はUbuntu標準の古い版を使っていた）
+
+# --- Docker（dockerリポジトリ） ---
+docker-ce
+docker-ce-cli
+containerd.io
+docker-compose-plugin # compose v2。旧端末のdocker-compose(v1)は移行しない
+
+# --- ビルド依存（pyenv/rbenv/nodenvの言語ビルド用） ---
+autoconf
+bison
+build-essential
+gcc-multilib
+g++-multilib
+libbz2-dev
+libdb-dev
+libffi-dev
+libgdbm-dev
+liblzma-dev
+libmysqlclient-dev
+libncurses-dev        # 旧端末では libncurses5-dev / ncurses-dev
+libreadline-dev
+libsqlite3-dev
+libssl-dev
+libx11-dev
+libxt-dev
+libyaml-dev
+zlib1g-dev

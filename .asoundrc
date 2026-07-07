@@ -1,0 +1,8 @@
+# WSL2にはサウンドカードが無いため、ALSAのdefaultをWSLgのPulseAudioに向ける
+# （herdrの通知音再生 `mpg123 -q` を動かすために追加。PULSE_SERVER=/mnt/wslg/PulseServer 経由で再生される）
+pcm.!default {
+    type pulse
+}
+ctl.!default {
+    type pulse
+}

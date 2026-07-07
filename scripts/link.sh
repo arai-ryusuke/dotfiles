@@ -3,8 +3,12 @@ set -euo pipefail
 
 DOTPATH="$HOME/.dotfiles"
 
-DOT_FILES=(.bash_profile .bashrc .gitconfig .tmux.conf .vimrc)
+DOT_FILES=(.bash_profile .bashrc .gitconfig .tmux.conf .vimrc .asoundrc)
 DOT_DIRS=(.vim)
+# ~/.config 配下に置く設定ファイル
+# 注意: アプリ側がUI操作で設定を書き換えるとsymlinkが実体ファイルに置き換わることが
+# ある（herdr等）。make link 再実行で検知できる（backupが作られリポジトリ側が優先される）
+CONFIG_FILES=(herdr/config.toml)
 
 safe_link() {
     local src="$1"
@@ -32,6 +36,12 @@ done
 # Link dot directories
 for d in "${DOT_DIRS[@]}"; do
     safe_link "$DOTPATH/$d" "$HOME/$d"
+done
+
+# Link config files under ~/.config
+for f in "${CONFIG_FILES[@]}"; do
+    mkdir -p "$HOME/.config/$(dirname "$f")"
+    safe_link "$DOTPATH/.config/$f" "$HOME/.config/$f"
 done
 
 # Link bin files
