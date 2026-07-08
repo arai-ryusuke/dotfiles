@@ -75,6 +75,10 @@ set virtualedit=onemore
 set smartindent
 set showmatch
 set laststatus=2
+" 忘れがちなショートカットのヒントをステータスライン右側に常時表示
+" （左側と行末の位置表示はデフォルトのstatuslineと同じ構成）
+" %<をヒント直前に置くことで、幅が足りない時はファイル名でなくヒント側を省略する
+let &statusline = '%f %h%m%r%=%<F2:行番号切替 F10:全選択 C-e:NERDTree  %-14.(%l,%c%V%) %P'
 set ignorecase
 set smartcase
 set incsearch
