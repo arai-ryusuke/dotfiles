@@ -1,3 +1,6 @@
+[keys]
+prefix = "ctrl+space"
+
 [ui.toast]
 delivery = "off"
 
