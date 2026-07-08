@@ -1,5 +1,10 @@
 [keys]
 prefix = "ctrl+space"
+previous_tab = "prefix+h"
+next_tab = "prefix+l"
+new_tab = "prefix+n"
+focus_pane_left = "prefix+left"
+focus_pane_right = "prefix+right"
 
 [ui.toast]
 delivery = "off"
