@@ -1,3 +1,4 @@
+onboarding = false
 [keys]
 prefix = "ctrl+space"
 previous_tab = "prefix+h"
@@ -18,3 +19,25 @@ pane_history = false
 
 [ui.sound]
 enabled = true
+
+[theme]
+name = "dracula"
+auto_switch = false
+
+# セカンダリテキスト（サイドバーのタブ名・$model等）の明度アップ
+# テーマ標準のmuted色は暗背景とのコントラストが低く2型3色覚では見づらいため、
+# 色相ではなく明度を上げて白寄りにする（テーマを替えてもこの上書きは共通で効く）
+[theme.custom]
+subtext0 = "#e8eaf6"
+overlay1 = "#e8eaf6"
+overlay0 = "#ffffff"
+
+# サイドバーのエージェント行: 1行目=アイコン+タブ名、2行目=ステータス+モデル名
+# デフォルトは [["state_icon", "workspace", "tab"], ["agent"]]
+# $model はカスタムトークン（~/.claude/hooks/herdr-model-token.sh が報告）
+# tabはoverlay0色+端末DIM属性で描かれるため白にしきれない。
+# トークン個別のfg/dim指定（{ token = "tab", fg = "...", dim = false }）は
+# master入りしたが0.7.4/現previewには未搭載。次のリリースで書き換える
+[ui.sidebar.agents]
+row_gap = 1
+rows = [["state_icon", "tab"], ["state_text", "$model"]]
