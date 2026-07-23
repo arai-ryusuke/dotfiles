@@ -35,9 +35,8 @@ overlay0 = "#ffffff"
 # サイドバーのエージェント行: 1行目=アイコン+タブ名、2行目=ステータス+モデル名
 # デフォルトは [["state_icon", "workspace", "tab"], ["agent"]]
 # $model はカスタムトークン（~/.claude/hooks/herdr-model-token.sh が報告）
-# tabはoverlay0色+端末DIM属性で描かれるため白にしきれない。
-# トークン個別のfg/dim指定（{ token = "tab", fg = "...", dim = false }）は
-# master入りしたが0.7.4/現previewには未搭載。次のリリースで書き換える
+# tabはデフォルトだとoverlay0色+端末DIM属性で暗く描かれるため、
+# トークン個別スタイル（0.7.5+）でfgを明示しdimを外して明度を確保する
 [ui.sidebar.agents]
 row_gap = 1
-rows = [["state_icon", "tab"], ["state_text", "$model"]]
+rows = [["state_icon", { token = "tab", fg = "#e8eaf6", dim = false }], ["state_text", "$model"]]
