@@ -10,6 +10,16 @@ focus_pane_right = "prefix+right"
 [ui.toast]
 delivery = "off"
 
+# ポップアップでvimを開き、保存内容をフォーカス中ペイン（claude等）の入力欄へ送る
+# 送信はしない（Enterはユーザーが押す）。実体は ~/.dotfiles/bin/herdr-prompt-vim.sh
+[[keys.command]]
+key = "prefix+i"
+type = "popup"
+command = "bash \"$HOME/.dotfiles/bin/herdr-prompt-vim.sh\""
+description = "compose prompt in vim"
+width = "80%"
+height = "80%"
+
 [ui]
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "spaces"
